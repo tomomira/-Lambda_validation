@@ -1,0 +1,19 @@
+{
+    "LambdaConfigurations": [
+        {
+            "Id": "BasicSummaryTrigger",
+            "LambdaFunctionArn": "arn:aws:lambda:REGION:ACCOUNT:function:s3-basic-summary",
+            "Events": ["s3:ObjectCreated:*"],
+            "Filter": {
+                "Key": {
+                    "FilterRules": [
+                        {
+                            "Name": "suffix",
+                            "Value": ".txt"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
